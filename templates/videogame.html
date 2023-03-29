@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+    {% block content %}
+    <div class="row align-center align-center">
+        <h1>Encontrado</h1>
+        {% for videojuego in response.videojuegos %}
+            <div class="card mx-4 mb-4 shadow p-3 mb-5 bg-white rounded" style="width: 18rem; background-color: rgb(160, 150, 150);">
+                <div class="card-body">
+                    <img class="card-img-top" src="{{videojuego.imagen}}" width="180" height="200">
+                    <h5 class="card-title" style="align-self: center;">{{videojuego.titulo}}</h5>
+                    <p class="card-text" ><span style="font-weight: bolder;">Desarrollador: </span>{{videojuego.desarrollador}}</p>
+                    <p class="card-text"><span style="font-weight: bolder;">Plataforma: </span>{{videojuego.plataforma}}</p>
+                    <p class="card-text"><span style="font-weight: bolder;">Clasificacion: </span>{{videojuego.clasificacion}}</p>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+
+    {% endblock %}

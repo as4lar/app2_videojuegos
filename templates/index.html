@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+    {% block content %}
+    <div class="container">
+        <div class="row mb-4">
+            <div class="col mt-3">
+                <form method="post">
+                    <div class="input-group">
+                        <div class="form-outline">
+                            <input type="search" id="titulo" name="titulo" class="form-control" placeholder="Search..."/>
+                        </div>
+                        <button type="submit" style="border: none; background-color: rgb(90, 88, 88); color: azure; font-weight: bolder; border-radius: 3;">Buscar</button> 
+    
+                    </div>
+                </form>
+            </div>
+            <div class="col mt-3">
+                <h2 style="color: rgb(228, 228, 220); font-weight: bolder;" >Todos los videojuegos</h2>
+            </div>
+            <div class="col mt-3">
+            </div>
+        </div>
+
+        <div class="row" style="align-items: center;">
+            {% for videojuego in response.videojuegos %}
+                <div class="card mx-4 mb-4 shadow-lg p-3 mb-5 bg-white rounded" style="width: 18rem; background-color: rgb(160, 150, 150);">
+                    <div class="card-body">
+                        <img class="card-img-top" src="{{videojuego.imagen}}" width="180" height="200">
+                        <h5 class="card-title" style="text-align: center;">{{videojuego.titulo}}</h5>
+                        <p class="card-text" ><span style="font-weight: bolder;">Desarrollador: </span>{{videojuego.desarrollador}}</p>
+                        <p class="card-text"><span style="font-weight: bolder;">Plataforma: </span>{{videojuego.plataforma}}</p>
+                        <p class="card-text"><span style="font-weight: bolder;">Clasificacion: </span>{{videojuego.clasificacion}}</p>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}
