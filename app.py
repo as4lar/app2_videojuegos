@@ -19,8 +19,6 @@ def home():
         for videojuego in videojuegos:
             if titulo==videojuego['titulo']:
                 videojuegos2.append(videojuego)
-            else:
-                abort(404)
         response={"videojuegos":videojuegos2}
         return render_template('videogame.html', response=response)
         """try:
